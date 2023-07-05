@@ -1,0 +1,13 @@
+.inactivo{
+    text-decoration: none;
+    color: blue;
+    background-color: aquamarine;
+    padding: 10px 20px;
+}
+
+.activo {
+    text-decoration: none;
+    color: goldenrod;
+    background-color: blueviolet;
+    padding: 10px 20px;
+}  
