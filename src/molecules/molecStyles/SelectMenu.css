@@ -8,4 +8,9 @@
     display: grid;
     align-items: center;
     justify-content: center;
+    width: max(100% 320px);
+}
+
+button {
+    font-size: large;
 }
