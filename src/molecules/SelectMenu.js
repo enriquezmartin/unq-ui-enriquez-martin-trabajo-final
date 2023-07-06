@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import SelectItem from '../atoms/SelectItem'
-import { useState } from 'react'
+import './molecStyles/SelectMenu.css'
 
 const SelectMenu = () => {
     const names = [
@@ -13,6 +13,7 @@ const SelectMenu = () => {
     const refPlayer = useRef();
     const refResult = useRef();
     const refComPlay = useRef();
+    const [isGameOver, setIsGameOver] = useState(false);
     const [selectedPlay,setSelectedPlay] = useState(null);
     const [selected2pPlay,setSelected2pPlay] = useState(null);
     const comPlay = () =>{
@@ -26,38 +27,47 @@ const SelectMenu = () => {
         comPlay();
     }
     //Si le pasaba el parámetro no me funcionaba.
-    const setRock = () => {setSelectedPlay(0); actualizarP1(0);}
-    const setPaper = () => {setSelectedPlay(1); actualizarP1(1);}
-    const setScissors = () => {setSelectedPlay(2); actualizarP1(2);}
-    const setSpock = () => {setSelectedPlay(3); actualizarP1(3);}
-    const setLizard = () => {setSelectedPlay(4); actualizarP1(4);}
+    const setPlay = (play) => {
+        if(!isGameOver) {
+            setSelectedPlay(play);
+            actualizarP1(play);
+        }
+    }
+    const setRock = () => {setPlay(0);}
+    const setPaper = () => {setPlay(1);}
+    const setScissors = () => {setPlay(2);;}
+    const setSpock = () => {setPlay(3);;}
+    const setLizard = () => {setPlay(4);}
     
     const calculateWinner = (play1, play2) =>{
-        console.log("A: "+ names[play1] + " vs " + names[play2]);
-        play1 ++; play2++;
-        //console.log(play1 + " vs " + play2);
+        const p1 = play1+1; 
+        const p2 = play2+1;
         //Algoritmo que usa el orden rock, paper, scissors, spock, lizard. (1 al 5)
-        if (play1 == play2) 
-            return "Empate";
+        if (p1 === p2) 
+            return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Empate!";
         //Si eligen lo mismo, es empate
-        const diff = Math.abs(play1-play2) ;
-        console.log("Dif:" + diff);
-        if ((diff % 2) == 0){
+        const diff = Math.abs(p1-p2);
+        if ((diff % 2) === 0){
             //Si la diferencia es par, gana el mas chico.
-            if (play1 < play2){
-                return "Gana Jugador 1";
+            if (p1 < p2){
+                return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 1!";
             }
         } else {
             //Si la diferencia es impar, gana el mayor.
-            if (play1>play2){
-                return "Gana Jugador 1";
+            if (p1>p2){
+                return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 1!";
             }
         }
-        return "Gana Jugador 2";
+        return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 2!";
         }
     
     const showResult = () => {
         refResult.current.innerHTML = calculateWinner(selectedPlay,selected2pPlay);
+        setIsGameOver(true);
+    }
+    const hideResult = () => {
+        refResult.current.innerHTML = "";
+        setIsGameOver(false);
     }
     const menuItems = [
         <SelectItem play={0} set={setRock}/>,
@@ -68,12 +78,19 @@ const SelectMenu = () => {
     ];
 
   return (
-    <div>    
-        {menuItems}  <button onClick={showResult}>Elegir!</button>
-        <div ref={refPlayer}> </div>
-        <div ref={refComPlay}> </div>
-        <div ref={refResult}> </div>
-    </div>
+    <>
+        <div className='selectorContainer'>    
+            {menuItems}  
+            {isGameOver?
+            <button onClick={hideResult}>Jugar de nuevo</button>:
+            <button onClick={showResult}>Elegir!</button> }
+        </div>
+        <div className='results'>
+            <div ref={refPlayer}> </div>
+            <div ref={refComPlay}> </div>
+            <div ref={refResult}> </div>
+        </div>
+    </>
   )
 }
 

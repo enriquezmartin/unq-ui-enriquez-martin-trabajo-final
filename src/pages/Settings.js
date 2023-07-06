@@ -1,8 +1,9 @@
 import React from 'react'
+import './pageStyles/Settings.css'
 
 const Settings = () => {
   return (
-    <div>
+    <div className='settingsContainer'>
       <h1>Configuración</h1>
     </div>
   )

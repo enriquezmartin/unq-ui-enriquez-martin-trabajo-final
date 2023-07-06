@@ -1,10 +1,11 @@
 import React from 'react'
 import SelectMenu from '../molecules/SelectMenu'
+import './pageStyles/Game.css'
 
 const Game = () => {
   return (
-    <div>
-      <h1>Game</h1>
+    <div className='gameContainer'>
+      <h1>Jugar</h1>
       <SelectMenu/>
     </div>
   )

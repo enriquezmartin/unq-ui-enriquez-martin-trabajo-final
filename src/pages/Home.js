@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <>
     <div className='homeContainer'> 
-        <h1 className='bigTitle'>Piedra, papel, tijeras, lagarto, spock</h1>
+        <h1 className='bigTitle'>Piedra, papel, tijeras, Spock, lagarto</h1>
         <h2 className='subtitle'>Ingrese nombre del jugador: </h2>
         <input type='text' placeholder='Ingrese nombre...'/>
         <div>
@@ -16,7 +15,6 @@ const Home = () => {
             </Link>
         </div>
     </div>
-</>
   )
 }
 
