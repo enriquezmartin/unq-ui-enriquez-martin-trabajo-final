@@ -1,0 +1,11 @@
+.selectorContainer{
+    display: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.results{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

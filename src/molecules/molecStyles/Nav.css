@@ -7,7 +7,13 @@
 
 .activo {
     text-decoration: none;
-    color: goldenrod;
-    background-color: blueviolet;
+    color: darkblue;
+    background-color: #b0a2da;
     padding: 10px 20px;
 }  
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

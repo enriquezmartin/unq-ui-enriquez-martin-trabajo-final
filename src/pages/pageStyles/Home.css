@@ -1,13 +1,15 @@
 .homeContainer{
-    display:column;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .playButton{
     text-decoration: none;
-    background-color: blueviolet;
+    background-color: #b0a2da;
     color: black;
     border: 2px solid white;
     border-radius: 8px;
-    
     margin-top: 20px;
 }
