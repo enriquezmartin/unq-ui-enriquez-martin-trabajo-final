@@ -13,6 +13,8 @@ const SelectMenu = () => {
     const refPlayer = useRef();
     const refResult = useRef();
     const refComPlay = useRef();
+    const [p1Name, setP1Name] = useState("Jugador 1");
+    const [p2Name, setP2Name] = useState("COM");
     const [isGameOver, setIsGameOver] = useState(false);
     const [selectedPlay,setSelectedPlay] = useState(null);
     const [selected2pPlay,setSelected2pPlay] = useState(null);
@@ -44,30 +46,43 @@ const SelectMenu = () => {
         const p2 = play2+1;
         //Algoritmo que usa el orden rock, paper, scissors, spock, lizard. (1 al 5)
         if (p1 === p2) 
-            return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Empate!";
+            return 0;
         //Si eligen lo mismo, es empate
         const diff = Math.abs(p1-p2);
         if ((diff % 2) === 0){
             //Si la diferencia es par, gana el mas chico.
             if (p1 < p2){
-                return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 1!";
+                return 1;
             }
         } else {
             //Si la diferencia es impar, gana el mayor.
             if (p1>p2){
-                return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 1!";
+                return 1;
             }
         }
-        return "J1: "+names[play1]+". J2: "+names[play2]+" ¡Gana Jugador 2!";
-        }
+        return 2;
+    }
     
     const showResult = () => {
-        refResult.current.innerHTML = calculateWinner(selectedPlay,selected2pPlay);
-        setIsGameOver(true);
+        if (selectedPlay==null || selectedPlay == undefined){
+            refResult.current.innerHTML = "Debes elegir una opción!"
+        } else {
+            const wins = calculateWinner(selectedPlay,selected2pPlay);
+            refPlayer.current.innerHTML = "J1 elige: " + names[selectedPlay];
+            refComPlay.current.innerHTML = "COM elige: " + names[selected2pPlay];
+            refResult.current.innerHTML = (wins === 0 ? 
+                "Empate!" :
+                ("Gana: " + (wins === 1 ? "Jugador 1" : "Jugador 2")));
+            setIsGameOver(true);
+        }
     }
     const hideResult = () => {
         refResult.current.innerHTML = "";
+        refPlayer.current.innerHTML = "";
+        refComPlay.current.innerHTML = "";
         setIsGameOver(false);
+        setSelected2pPlay(null);
+        setSelectedPlay(null);
     }
     const menuItems = [
         <SelectItem play={0} set={setRock}/>,
@@ -84,11 +99,11 @@ const SelectMenu = () => {
             {isGameOver?
             <button onClick={hideResult}>Jugar de nuevo</button>:
             <button onClick={showResult}>Elegir!</button> }
-        </div>
         <div className='results'>
             <div ref={refPlayer}> </div>
             <div ref={refComPlay}> </div>
             <div ref={refResult}> </div>
+        </div>
         </div>
     </>
   )
