@@ -1,8 +1,12 @@
 import React from 'react'
+import SelectMenu from '../molecules/SelectMenu'
 
 const Game = () => {
   return (
-    <div>Game</div>
+    <div>
+      <h1>Game</h1>
+      <SelectMenu/>
+    </div>
   )
 }
 

@@ -1,0 +1,13 @@
+.homeContainer{
+    display:column;
+}
+
+.playButton{
+    text-decoration: none;
+    background-color: blueviolet;
+    color: black;
+    border: 2px solid white;
+    border-radius: 8px;
+    
+    margin-top: 20px;
+}

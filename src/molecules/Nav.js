@@ -2,8 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './molecStyles/Nav.css'
 
-//const activado = ({isActive} ) => {(isActive ? "activo" : null)}
-
 const Nav = () => {
   return (
     <nav>
