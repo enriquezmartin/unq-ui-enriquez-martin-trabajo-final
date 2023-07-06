@@ -1,0 +1,18 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.playerName {
+    font-size: 2rem; /* Equivalente a text-2xl */
+    font-weight: 600; /* Equivalente a font-semibold */
+}
+  
+
+.playerScore {
+    font-size: 1.125rem; /* Equivalente a text-lg */
+    color: #6B7280; /* Equivalente a text-gray-500 */
+}
+  

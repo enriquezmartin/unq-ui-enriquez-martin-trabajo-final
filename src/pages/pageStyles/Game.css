@@ -4,19 +4,30 @@
     justify-content: center;
 }
 
-.selectorContainer{
-    display: column;
-    align-items: center;
-    justify-content: center;
+.selectorContainer {
+    justify-self: auto;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    margin: 10px;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .results{
     display: grid;
     align-items: center;
     justify-content: center;
-    width: max(100% 320px);
+    width: 320px;
 }
 
 button {
-    font-size: large;
+    width:100%;
 }
