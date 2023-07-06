@@ -1,4 +1,5 @@
 import React from 'react'
+import './Styles/Button.css'
 
 const Button = ({handleClick, text}) => {
   return (
