@@ -18,3 +18,9 @@ Trabajo final de la materia "Construcción de interfaces de usuario" UNQ. 2023
 - Posibilidad de jugar entre 2 humanos (de forma local)
 - Manteniendo el anonimato de las elecciones de cada jugador
 
+## Cómo correr la aplicación:
+- Se debe tener instalado node y npm, en particular en este proyecto se usó node v18.16 y npm v.9.5.1
+- Clonar el repositorio usando el comando 'git clone (url)'
+- Navegar hacia el directorio recien creado que contiene el repositorio, usando el comando 'cd directorio'
+- dentro del directorio, correr el comando 'npm install' para instalar todas las dependencias usadas por React en el proyecto. Esto puede demorar unos minutos.
+- Levantar la aplicación usando el comando 'npm start'. La misma se abre por defecto en http://localhost:3000
