@@ -1,12 +1,16 @@
 .item{
-    border-radius: 50%;
-    border: 1vh hidden;
+    float:left;
+    width: max-content;
 }
-img{
-    border-radius: 50%;
+
+.select{
     width: 100%;
+    border-radius: 50%;
+    margin: 20px;
 }
-.item:hover{
+
+.select:hover{
+    border: 2px solid red;
     cursor: pointer;
-    border: 1vh solid mediumseagreen;
+    margin: 18px;
 }
