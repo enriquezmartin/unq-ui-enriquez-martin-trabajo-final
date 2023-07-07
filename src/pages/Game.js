@@ -1,11 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import SelectMenu from '../molecules/SelectMenu';
 import Scoreboard from '../molecules/Scoreboard';
 import HandBalloon from '../atoms/HandBalloon';
 import Button from '../atoms/Button';
 import './pageStyles/Game.css';
+import { UserContext } from '../contexts/UserContext';
 
 const Game = () => {
+    const {config, setConfig} = useContext(UserContext);
+    const p1Name = config.player1Name;
+    const p2Name = config.player2Name;
     const names = [
       "Piedra",
       "Papel",
@@ -16,10 +20,23 @@ const Game = () => {
     const refPlayer = useRef();
     const refResult = useRef();
     const refComPlay = useRef();
-    const [p1Name, setP1Name] = useState("Jugador");
-    const [p2Name, setP2Name] = useState("COM");
-    const [p1Score, setP1Score] = useState(0);
-    const [p2Score, setP2Score] = useState(0);
+    //const [p1Score, setP1Score] = useState(config.player1Score);
+    const updateP1Score = ()=> {
+      setConfig( config => ({
+        ...config,
+        player1Score: config.player1Score+1
+      }))
+    };
+
+    const updateP2Score = ()=> {
+      setConfig( config => ({
+        ...config,
+        player2Score: config.player2Score+1
+      }))
+    };
+    //const [p2Score, setP2Score] = useState(config.player2Score);
+
+
     const [isGameOver, setIsGameOver] = useState(false);
     const [selectedPlay,setSelectedPlay] = useState(null);
     const [selected2pPlay,setSelected2pPlay] = useState(null);
@@ -39,7 +56,7 @@ const Game = () => {
           setSelectedPlay(play);
           actualizarP1(play);
           refPlayer.current.style.visibility = "visible";
-          //refPlayer.current.innerHTML = "J1 ha elegido.";
+          refResult.current.innerHTML = config.player1Name + " ha elegido.";
       }
     }
 
@@ -77,9 +94,12 @@ const Game = () => {
           refResult.current.innerHTML = (wins === 0 ? 
               "¡Empate!" :
               ("Gana: " + (wins === 1 ? p1Name : p2Name)));
-          if (wins === 1) setP1Score(p1Score => p1Score + 1);
-          if (wins === 2) setP2Score(p2Score => p2Score + 1);
+          if (wins === 1) updateP1Score();
+            //setP1Score(p1Score => p1Score + 1);
+          if (wins === 2) updateP2Score();
+          //setP2Score(p2Score => p2Score + 1);
           setIsGameOver(true);
+      
       }
     }
 
@@ -102,7 +122,8 @@ const Game = () => {
       <h1>Jugar</h1>
         <div className='selectorContainer'>  
           <div className='column'>
-              <Scoreboard players={[p1Name,p2Name]} scores={[p1Score,p2Score]}/>
+              <Scoreboard players={[config.player1Name,config.player2Name]} 
+              scores={[config.player1Score,config.player2Score]}/>
           </div>
           <div className='column'>
               <SelectMenu setPlay={playSetter}/>
@@ -113,15 +134,15 @@ const Game = () => {
         </div>
         <div className='resultContainer'>
             <div ref={refPlayer}> 
-              <HandBalloon play={selectedPlay} playNames={names} playerName={p1Name}/>   
+              <HandBalloon play={selectedPlay} playNames={names} playerName={config.player1Name}/>   
             </div>
             <div ref={refComPlay}>
-              <HandBalloon play={selected2pPlay} playNames={names} playerName={p2Name}/>
+              <HandBalloon play={selected2pPlay} playNames={names} playerName={config.player2Name}/>
             </div>
             <div ref={refResult}> Gana:  </div>
         </div>
       </div>
-      </>
+    </>
   )
 }
 

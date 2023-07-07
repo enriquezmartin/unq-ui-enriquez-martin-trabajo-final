@@ -1,11 +1,12 @@
 .gameContainer{
-    display:grid;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .selectorContainer {
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .column {
