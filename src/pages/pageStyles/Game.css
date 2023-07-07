@@ -5,12 +5,12 @@
 }
 
 .selectorContainer {
-    justify-self: auto;
+    align-items: baseline;
 }
 
 .column {
     float: left;
-    width: 30%;
+    width: 48%;
     margin: 10px;
 }
   
@@ -21,11 +21,9 @@
     clear: both;
 }
 
-.results{
-    display: grid;
+.resultContainer{
+    display: flex;
     align-items: center;
-    justify-content: center;
-    width: 320px;
 }
 
 button {

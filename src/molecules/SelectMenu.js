@@ -28,9 +28,9 @@ const SelectMenu = ({setPlay}) => {
     ];
 
   return (
-    <>
+    <div className='selector'>
         {menuItems}
-    </>
+    </div>
   )
 }
 

@@ -1,8 +1,20 @@
 import React from 'react'
 import {FaHandRock, FaHandPaper, FaHandScissors, FaHandLizard,FaHandSpock } from 'react-icons/fa'
 import './Styles/SelectItem.css'
+import im_rock from '../images/rock.png'
+import im_paper from '../images/paper.png'
+import im_scissors from '../images/scissors.png'
+import im_spock from '../images/spock.png'
+import im_lizard from '../images/lizard.png'
 
 const SelectItem = ({play, set}) => {
+    const ims = [
+      im_rock,
+      im_paper,
+      im_scissors,
+      im_spock,
+      im_lizard
+    ];
     const icons = [
         <FaHandRock/>,
         <FaHandPaper/>,
@@ -19,9 +31,9 @@ const SelectItem = ({play, set}) => {
     ];
   return (
     <div onClick={set} className='item'>
-        {icons[play]} <div>{names[play]}</div>
+      <img src = {ims[play]} alt={"PlayLogo"}/>
     </div>
   )
 }
-
+ //     {icons[play]} <div>{names[play]}</div>
 export default SelectItem

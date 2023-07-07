@@ -1,10 +1,12 @@
 .item{
-    font-size: 24px;
-    display:flex;
-    justify-content: center;
-    padding: 10px;
+    border-radius: 50%;
+    border: 1vh hidden;
+}
+img{
+    border-radius: 50%;
+    width: 100%;
 }
 .item:hover{
     cursor: pointer;
-    background-color: goldenrod;
+    border: 1vh solid mediumseagreen;
 }

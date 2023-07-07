@@ -1,16 +1,4 @@
-.selectorContainer{
-    display: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.results{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: max(100% 320px);
-}
-
-button {
-    font-size: large;
+.selector {
+    display: flex;
+    padding: 1%;
 }

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SelectMenu from '../molecules/SelectMenu';
 import Scoreboard from '../molecules/Scoreboard';
+import HandBalloon from '../atoms/HandBalloon';
 import Button from '../atoms/Button';
 import './pageStyles/Game.css';
-
 
 const Game = () => {
     const names = [
@@ -31,7 +31,6 @@ const Game = () => {
     
     const actualizarP1 = (num)=>{
       setSelectedPlay(num);
-
       comPlay();
     }
 
@@ -40,7 +39,7 @@ const Game = () => {
           setSelectedPlay(play);
           actualizarP1(play);
           refPlayer.current.style.visibility = "visible";
-          refPlayer.current.innerHTML = "J1 ha elegido.";
+          //refPlayer.current.innerHTML = "J1 ha elegido.";
       }
     }
 
@@ -73,8 +72,8 @@ const Game = () => {
           refResult.current.style.visibility = "visible";
           refPlayer.current.style.visibility = "visible";
           refComPlay.current.style.visibility = "visible";
-          refPlayer.current.innerHTML = "J1 elige: " + names[selectedPlay];
-          refComPlay.current.innerHTML = "COM elige: " + names[selected2pPlay];
+          //refPlayer.current.innerHTML = "J1 elige: " + names[selectedPlay];
+          //refComPlay.current.innerHTML = "COM elige: " + names[selected2pPlay];
           refResult.current.innerHTML = (wins === 0 ? 
               "¡Empate!" :
               ("Gana: " + (wins === 1 ? p1Name : p2Name)));
@@ -92,6 +91,11 @@ const Game = () => {
       setSelected2pPlay(null);
       setSelectedPlay(null);
     }
+
+    useEffect(() => {
+      hideResult();
+    }, [])
+    
   return (
     <>
       <div className='gameContainer'>
@@ -104,13 +108,17 @@ const Game = () => {
               <SelectMenu setPlay={playSetter}/>
               {isGameOver ?
               <Button handleClick={hideResult} text={"Jugar de nuevo"}/>:
-              <Button handleClick={showResult} text={"Elegir"}/> }
-          </div>  
-          <div className='column'>
-              <div ref={refPlayer}> {p1Name} elige: </div>
-              <div ref={refComPlay}> {p2Name} elige: </div>
-              <div ref={refResult}> Gana:  </div>
+              <Button handleClick={showResult} text={"Atacar!"}/> }
           </div>
+        </div>
+        <div className='resultContainer'>
+            <div ref={refPlayer}> 
+              <HandBalloon play={selectedPlay} playNames={names} playerName={p1Name}/>   
+            </div>
+            <div ref={refComPlay}>
+              <HandBalloon play={selected2pPlay} playNames={names} playerName={p2Name}/>
+            </div>
+            <div ref={refResult}> Gana:  </div>
         </div>
       </div>
       </>
