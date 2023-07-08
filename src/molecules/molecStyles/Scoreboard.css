@@ -1,18 +1,23 @@
 .board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 8px;
+    border-collapse: collapse;
+    margin: 10px;
+    width: 30rem;
+    max-width: calc(100% - 20px);
+    justify-self: center;
+}
+th , td {
+    border: solid 1px white;
+    text-align: center;
 }
 
 .playerName {
-    font-size: 2rem; /* Equivalente a text-2xl */
-    font-weight: 600; /* Equivalente a font-semibold */
+    font-size: 2rem; 
+    font-weight: 600; 
 }
   
 
 .playerScore {
-    font-size: 1.125rem; /* Equivalente a text-lg */
-    color: #6B7280; /* Equivalente a text-gray-500 */
+    font-size: 1.125rem;
+    color: whitesmoke; 
 }
   

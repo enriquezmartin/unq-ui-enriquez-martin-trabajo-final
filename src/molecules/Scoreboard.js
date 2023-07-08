@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaTable } from 'react-icons/fa';
+import './molecStyles/Scoreboard.css'
 
 const Scoreboard = ({players, scores}) => {
     return (
