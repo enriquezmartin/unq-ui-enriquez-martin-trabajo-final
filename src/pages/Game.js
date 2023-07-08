@@ -20,7 +20,7 @@ const Game = () => {
     const refPlayer = useRef();
     const refResult = useRef();
     const refComPlay = useRef();
-    //const [p1Score, setP1Score] = useState(config.player1Score);
+    
     const updateP1Score = ()=> {
       setConfig( config => ({
         ...config,
@@ -34,8 +34,6 @@ const Game = () => {
         player2Score: config.player2Score+1
       }))
     };
-    //const [p2Score, setP2Score] = useState(config.player2Score);
-
 
     const [isGameOver, setIsGameOver] = useState(false);
     const [selectedPlay,setSelectedPlay] = useState(null);
@@ -89,15 +87,12 @@ const Game = () => {
           refResult.current.style.visibility = "visible";
           refPlayer.current.style.visibility = "visible";
           refComPlay.current.style.visibility = "visible";
-          //refPlayer.current.innerHTML = "J1 elige: " + names[selectedPlay];
-          //refComPlay.current.innerHTML = "COM elige: " + names[selected2pPlay];
+          
           refResult.current.innerHTML = (wins === 0 ? 
               "¡Empate!" :
               ("Gana: " + (wins === 1 ? p1Name : p2Name)));
           if (wins === 1) updateP1Score();
-            //setP1Score(p1Score => p1Score + 1);
           if (wins === 2) updateP2Score();
-          //setP2Score(p2Score => p2Score + 1);
           setIsGameOver(true);
       
       }
@@ -120,26 +115,26 @@ const Game = () => {
     <>
       <div className='gameContainer'>
       <h1>Jugar</h1>
-        <div className='selectorContainer'>  
-          <div className='column'>
-              <Scoreboard players={[config.player1Name,config.player2Name]} 
-              scores={[config.player1Score,config.player2Score]}/>
-          </div>
-          <div className='column'>
+        <div className='wrapper'>  
+          <div className='selectorContainer'>
               <SelectMenu setPlay={playSetter}/>
               {isGameOver ?
               <Button handleClick={hideResult} text={"Jugar de nuevo"}/>:
               <Button handleClick={showResult} text={"Atacar!"}/> }
+          </div>  
+          <div className='scores'>
+              <Scoreboard players={[config.player1Name,config.player2Name]} 
+              scores={[config.player1Score,config.player2Score]}/>
           </div>
-        </div>
-        <div className='resultContainer'>
-            <div ref={refPlayer}> 
-              <HandBalloon play={selectedPlay} playNames={names} playerName={config.player1Name}/>   
-            </div>
-            <div ref={refComPlay}>
-              <HandBalloon play={selected2pPlay} playNames={names} playerName={config.player2Name}/>
-            </div>
-            <div ref={refResult}> Gana:  </div>
+          <div className='plays'>
+              <div ref={refPlayer}> 
+                <HandBalloon play={selectedPlay} playNames={names} playerName={config.player1Name}/>   
+              </div>
+              <div ref={refComPlay}>
+                <HandBalloon play={selected2pPlay} playNames={names} playerName={config.player2Name}/>
+              </div>
+              <div ref={refResult}> Gana:  </div>
+          </div>
         </div>
       </div>
     </>

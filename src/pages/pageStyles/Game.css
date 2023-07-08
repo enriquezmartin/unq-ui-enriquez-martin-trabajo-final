@@ -1,32 +1,47 @@
 .gameContainer{
-    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.selectorContainer {
+.wrapper {
     align-items: flex-start;
 }
 
-.column {
-    float: left;
-    width: 48%;
-    margin: 10px;
+.scores {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 3em; */
 }
-  
-  /* Clear floats after the columns */
+.selectorContainer {
+    display:grid;
+    width: minmax(300px, 1fr);
+    height: minmax(300px, 1fr);
+    justify-self: center;
+    align-items: center ;
+}
+
+  /* Clear floats after the columns 
 .row:after {
     content: "";
     display: table;
     clear: both;
+}*/
+
+.plays{
+    display: flex;
+    width: 30rem;
+    max-width: calc(100% - 20px);
+    justify-self: center;
+    align-items: center;
 }
 
 .resultContainer{
-    display: flex;
     align-items: center;
 }
 
 button {
-    width:100%;
+    min-width: fit-content;
+    max-width: 40%;
+    margin: 2vh;
 }
