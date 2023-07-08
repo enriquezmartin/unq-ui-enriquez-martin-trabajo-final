@@ -17,8 +17,10 @@ const HandBalloon = ({play, playNames, playerName}) => {
   return (
     <div className='attackContainer'>
         <img className='playBall' src={ims[play]} alt="Globo de mano" />
-        <div>{playNames[play]}</div>
-        <div>{playerName}</div>
+        <div className='subtext'>
+          {playNames[play] + " "}
+          {"("+playerName + ")"}
+        </div>
     </div>
   )
 }
