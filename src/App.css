@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 body{
-  /*background-color: #2b2a4c;*/
   background-image: url('./images/bkg1.jpg');
   color:#fed38c;
   font-family: 'Roboto Slab', serif;
-  /* overflow-y: scroll; */
 }
