@@ -2,7 +2,7 @@ import React from 'react'
 import SelectItem from '../atoms/SelectItem'
 import './molecStyles/SelectMenu.css'
 
-const SelectMenu = ({setPlay}) => {
+const SelectMenu = ({setPlay, turn}) => {
     const names = [
         "Piedra",
         "Papel",
@@ -12,11 +12,11 @@ const SelectMenu = ({setPlay}) => {
     ];
 
     //Si le pasaba el parámetro no me funcionaba.
-    const setRock = () => {setPlay(0);}
-    const setPaper = () => {setPlay(1);}
-    const setScissors = () => {setPlay(2);;}
-    const setSpock = () => {setPlay(3);;}
-    const setLizard = () => {setPlay(4);}
+    const setRock = () => {setPlay(0, turn);}
+    const setPaper = () => {setPlay(1, turn);}
+    const setScissors = () => {setPlay(2, turn);}
+    const setSpock = () => {setPlay(3, turn);}
+    const setLizard = () => {setPlay(4, turn);}
     
     
     const menuItems = [

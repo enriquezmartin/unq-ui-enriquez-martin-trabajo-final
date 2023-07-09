@@ -18,7 +18,7 @@ Trabajo final de la materia "Construcción de interfaces de usuario" UNQ. 2023
 - Posibilidad de jugar entre 2 humanos (de forma local)
 - Manteniendo el anonimato de las elecciones de cada jugador
 
-## Cómo correr la aplicación:
+## Cómo levantar la aplicación localmente:
 - Se debe tener instalado node y npm, en particular en este proyecto se usó node v18.16 y npm v.9.5.1
 - Clonar el repositorio usando el comando 'git clone (url)'
 - Navegar hacia el directorio recien creado que contiene el repositorio, usando el comando 'cd directorio'

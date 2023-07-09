@@ -36,7 +36,7 @@ const Settings = () => {
       player2Name: config.vsCom ? "Jugador 2": "COM" ,
       vsCom: !config.vsCom,
     }))
-    console.log(config.vsCom)
+    name2Ref.current.readOnly = !config.vsCom; 
   }
   return (
     <div className='settingsContainer'>
@@ -47,10 +47,11 @@ const Settings = () => {
         value={config.player1Name} onChange={updateP1Name}/>
       <p>Jugador 2: {config.player2Name}</p>
       <p>Editar nombre de jugador: </p> 
-      <input ref={name2Ref} type='text' 
+      <input ref={name2Ref} type='text' readOnly={true}
         value={config.player2Name} onChange={updateP2Name}/>
       <p>
         <Toggle 
+          checked={!config.vsCom}
           onChange={handleChange}
           labelLeft='VS COM'
           labelRight='VS PERSONA'/>
