@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React from 'react'
 import './App.css'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Home from './pages/Home'
@@ -17,7 +17,7 @@ const App = () => {
           <Route path='/' element={<Home/>}/>
           <Route path='/jugar' element={<Game/>}/>
           <Route path='/configurar' element={<Settings/>}/>
-          <Route path='*' element={<ErrorPage/>}/>
+          <Route path='/*' element={<ErrorPage/>}/>
         </Routes>
     </UserProvider>
     </BrowserRouter>

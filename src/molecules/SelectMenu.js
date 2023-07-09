@@ -20,11 +20,11 @@ const SelectMenu = ({setPlay, turn}) => {
     
     
     const menuItems = [
-        <SelectItem play={0} set={setRock}/>,
-        <SelectItem play={1} set={setPaper}/>,
-        <SelectItem play={2} set={setScissors}/>,
-        <SelectItem play={3} set={setSpock}/>,
-        <SelectItem play={4} set={setLizard}/>
+        <SelectItem play={0} key={"it_0"} set={setRock}/>,
+        <SelectItem play={1} key={"it_1"} set={setPaper}/>,
+        <SelectItem play={2} key={"it_2"} set={setScissors}/>,
+        <SelectItem play={3} key={"it_3"} set={setSpock}/>,
+        <SelectItem play={4} key={"it_4"} set={setLizard}/>
     ];
 
   return (

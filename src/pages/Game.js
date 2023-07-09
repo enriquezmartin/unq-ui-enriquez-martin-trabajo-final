@@ -157,7 +157,6 @@ const Game = () => {
     const resetGame = () => {
       setState(States.P1Select);
       setPlayerTurn(0);
-      console.log("Reseteando ... "  +  state);
       hideResult();
     }
     
