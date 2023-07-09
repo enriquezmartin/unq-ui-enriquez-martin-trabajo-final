@@ -14,6 +14,9 @@ const Nav = () => {
         <NavLink className= {
             ({isActive} ) => (isActive ? "activo" : "inactivo")
         } to="/configurar">Configuración</NavLink>
+        <NavLink className= {
+            ({isActive} ) => (isActive ? "activo" : "inactivo")
+        } to="/reglas">Reglas</NavLink>
     </nav>
 
   )
