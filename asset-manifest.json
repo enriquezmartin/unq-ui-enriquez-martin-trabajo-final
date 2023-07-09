@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.01e92f7a.css",
-    "main.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.d5094e71.js",
+    "main.css": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.04ea8702.css",
+    "main.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.905dcafb.js",
     "static/js/787.32b29eb7.chunk.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/787.32b29eb7.chunk.js",
     "static/media/bkg1.jpg": "/unq-ui-enriquez-martin-trabajo-final/static/media/bkg1.60d52e4519019887c753.jpg",
+    "static/media/rules.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/rules.755151ea1dd10a95dbba.png",
+    "static/media/bluewhale.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/bluewhale.27dfa202612c5427a699.png",
     "static/media/lizard.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/lizard.97ea625c5456a8113558.png",
     "static/media/paper.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/paper.4b5c1bc296d9f9f90b41.png",
     "static/media/spock.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/spock.78f1b2f8458d7219bfc9.png",
     "static/media/scissors.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/scissors.782cf78cf3a1fa46f69a.png",
     "index.html": "/unq-ui-enriquez-martin-trabajo-final/index.html",
-    "main.01e92f7a.css.map": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.01e92f7a.css.map",
-    "main.d5094e71.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.d5094e71.js.map",
+    "main.04ea8702.css.map": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.04ea8702.css.map",
+    "main.905dcafb.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.905dcafb.js.map",
     "787.32b29eb7.chunk.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/787.32b29eb7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01e92f7a.css",
-    "static/js/main.d5094e71.js"
+    "static/css/main.04ea8702.css",
+    "static/js/main.905dcafb.js"
   ]
 }
