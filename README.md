@@ -30,7 +30,7 @@ Se puede achicar bastante la pantalla y no queda información afuera, se probó 
 
 - Navegar hacia el directorio recien creado que contiene el repositorio, usando el comando:
 
-        cd directorio
+        cd <nombre_del_directorio>
 
 - dentro del directorio, correr el comando: 
 
