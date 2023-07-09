@@ -31,7 +31,7 @@ const SelectItem = ({play, set}) => {
     ];
   return (
     <div onClick={set} className='item'>
-      <img className='select'src = {ims[play]} alt={"PlayLogo"}/>
+      <img className='select' src = {ims[play]} alt={"PlayLogo"}/>
     </div>
   )
 }
