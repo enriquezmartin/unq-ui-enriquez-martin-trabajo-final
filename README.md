@@ -42,3 +42,5 @@ para instalar todas las dependencias usadas por React en el proyecto. Esto puede
         npm start
 
 La misma se abre por defecto en http://localhost:3000
+
+Por otro lado, la app se encuentra deployeada [AQUÍ](https://enriquezmartin.github.io/unq-ui-enriquez-martin-trabajo-final/)
