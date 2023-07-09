@@ -25,3 +25,13 @@ input{
     margin: 10px;
     width: 50vw;
 }
+
+.errImage{
+    height: 50vh;
+    max-height: calc(100% - 20px);
+}
+
+.ruleList {
+    font-size: max(2vw, 18px);
+    margin: 10px;
+}
