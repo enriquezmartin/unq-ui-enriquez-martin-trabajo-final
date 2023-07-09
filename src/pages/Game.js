@@ -43,10 +43,11 @@ const Game = () => {
       "Spock",
       "Lagarto"
     ];
-    const refPlayer = useRef();
-    const refResult = useRef();
-    const refComPlay = useRef();
-    const resetButton = useRef();
+    const refPlayer1 = useRef();
+    const refInfo = useRef();
+    const refPlayer2 = useRef();
+    const refResetButton = useRef();
+    const refTurn = useRef();
     
     const updateP1Score = ()=> {
       setConfig( config => ({
@@ -69,7 +70,6 @@ const Game = () => {
     
     const comPlay = () =>{
       const play = Math.floor(Math.random()*5 % 5);
-      console.log("La com elegira: "+play)
       setSelected2pPlay(play);
       setState(States.GameOver);
     }
@@ -106,10 +106,11 @@ const Game = () => {
     
     const showResult = () => {
           const wins = calculateWinner(selectedPlay,selected2pPlay);
-          refResult.current.style.visibility = "visible";
-          refPlayer.current.style.visibility = "visible";
-          refComPlay.current.style.visibility = "visible";
-          refResult.current.innerHTML = (wins === 0 ? 
+          refInfo.current.style.visibility = "visible";
+          refPlayer1.current.style.visibility = "visible";
+          refPlayer2.current.style.visibility = "visible";
+          refTurn.current.style.visibility = "hidden";
+          refInfo.current.innerHTML = (wins === 0 ? 
               "¡Empate!" :
               ("Gana: " + (wins === 1 ? p1Name : p2Name)));
           if (wins === 1) updateP1Score();
@@ -117,10 +118,11 @@ const Game = () => {
     }
 
     const hideResult = () => {
-      refPlayer.current.style.visibility = "hidden";
-      refComPlay.current.style.visibility = "hidden";
-      refResult.current.style.visibility = "hidden";
-      resetButton.current.style.visibility = "hidden";
+      refPlayer1.current.style.visibility = "hidden";
+      refPlayer2.current.style.visibility = "hidden";
+      refInfo.current.style.visibility = "hidden";
+      refResetButton.current.style.visibility = "hidden";
+      refTurn.current.style.visibility = "visible";
       setSelected2pPlay(null);
       setSelectedPlay(null);
     }
@@ -131,20 +133,21 @@ const Game = () => {
     }, [])
 
     useEffect(() => {
-      /* La idea es manejar la jugada acá, cuando cambie
+      /* Maquina de estados. 
+      La idea es manejar la jugada acá, cuando cambie
       algún parámetro como ser la elección de cada jugador.*/
       switch (state) {
         case States.P1Select:
-          refResult.current.style.visibility = "visible";
-          refResult.current.innerHTML = "Debe elegir: " + p1Name;
+          refInfo.current.style.visibility = "visible";
+          refInfo.current.innerHTML = "Debe elegir: " + p1Name;
           break;
         case States.P2Select:
-          refResult.current.innerHTML = "Debe elegir: " + p2Name;
+          refInfo.current.innerHTML = "Debe elegir: " + p2Name;
           if(vsCom) comPlay();
           break;
         case States.GameOver:
           showResult();
-          resetButton.current.style.visibility="visible";
+          refResetButton.current.style.visibility="visible";
           break;
         default:
           break;
@@ -163,8 +166,7 @@ const Game = () => {
       <div className='gameContainer'>
       <h1>Jugar</h1>
         <div className='wrapper'>  
-          <div>Turno del jugador {playerTurn+1}
-          {vsCom? "VsCOM" : "VS_PERS" }
+          <div ref={refTurn}>Turno del jugador: {playerTurn === 0 ? p1Name : p2Name }
           </div>
           <div className='selectorContainer'>
               <SelectMenu setPlay={playSetter} turn={playerTurn}/>
@@ -174,14 +176,16 @@ const Game = () => {
               scores={[config.player1Score,config.player2Score]}/>
           </div>
           <div className='plays'>
-              <div ref={refPlayer}> 
+              <div ref={refPlayer1}> 
                 <HandBalloon play={selectedPlay} playNames={names} playerName={config.player1Name}/>   
               </div>
-              <div ref={refComPlay}>
+              <div ref={refPlayer2}>
                 <HandBalloon play={selected2pPlay} playNames={names} playerName={config.player2Name}/>
               </div>
-              <div ref={refResult}> Gana:  </div>
-              <div ref={resetButton}><Button text={"Jugar de nuevo"} handleClick={resetGame}/> </div>
+              <div className='info'>
+                <div ref={refInfo}> Gana:  </div>
+                <div ref={refResetButton}><Button text={"Jugar de nuevo"} handleClick={resetGame}/> </div>
+              </div>
           </div>
         </div>
       </div>

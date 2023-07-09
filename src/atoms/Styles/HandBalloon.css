@@ -1,8 +1,18 @@
 .attackContainer {
-    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
     justify-content: center;
     text-align:center ;
+    /* border-radius: 50%; */
 }
 .playBall {
     width: 50%;
+    max-width: calc(80vw - 20px);
+    align-self: center;
+}
+
+.subtext{
+    text-align: center;
+    font-size: min(4vw, 1rem);
 }

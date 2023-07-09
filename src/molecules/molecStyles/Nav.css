@@ -4,7 +4,9 @@
     background-color: darkgray;
     padding: 10px 20px;
 }
-
+.inactivo:hover{
+    background-color: whitesmoke;
+}
 .activo {
     text-decoration: none;
     color: darkblue;
@@ -14,6 +16,6 @@
 
 nav{
     display:flex;
-    align-items: left;
+    align-items: center;
     justify-content: center;
 }

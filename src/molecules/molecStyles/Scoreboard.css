@@ -1,23 +1,23 @@
 .board {
     border-collapse: collapse;
     margin: 10px;
-    width: 30rem;
+    width: 70vw;
     max-width: calc(100% - 20px);
     justify-self: center;
 }
+
 th , td {
     border: solid 1px white;
     text-align: center;
 }
 
 .playerName {
-    font-size: 2rem; 
+    font-size: min(6vw, 2rem); 
     font-weight: 600; 
 }
-  
 
 .playerScore {
-    font-size: 1.125rem;
+    font-size: min(5vw, 1.5rem);
     color: whitesmoke; 
 }
   

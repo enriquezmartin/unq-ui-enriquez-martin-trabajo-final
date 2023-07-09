@@ -1,12 +1,18 @@
 .selector {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    border: 0.5vh solid goldenrod;
+    border: 0.5vh goldenrod;
+    border-style: groove;
     border-radius: 20px;
 
-    width: 70vw;
-    max-width: calc(100% - 20px);
+    width: 85vw;
+    /* max-width: calc(100% - 20px); */
+    max-width: calc(90% - 20px);
+
+    
+    max-height: fit-content;
+
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 10px;
 }

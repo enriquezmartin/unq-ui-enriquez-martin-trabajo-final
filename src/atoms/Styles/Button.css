@@ -1,4 +1,4 @@
-button{
+.myButton{
     text-decoration: none;
     background-color: #b0a2da;
     color: darkblue;
@@ -7,6 +7,7 @@ button{
     padding: 5px;
 }
 
-button:hover{
+.myButton:hover{
     cursor: pointer;
+    background-color: #8762f6;
 }
