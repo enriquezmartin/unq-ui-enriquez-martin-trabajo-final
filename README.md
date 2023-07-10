@@ -15,7 +15,7 @@ Trabajo final de la materia "Construcción de interfaces de usuario" UNQ. 2023
 
 ## Extras
 - [x] Posibilidad de jugar más de una partida
-- [x] Mantener un contador de victorias de cada participante en la misma sesión
+- [x] Mantener un contador de victorias de cada participante en la misma sesión (cuenta las victorias de los dos que estén jugando, si cambia de jugador se debe resetear)
 - [x] Posibilidad de jugar entre 2 humanos (de forma local)
 - [x] Manteniendo el anonimato de las elecciones de cada jugador
 - [x] Interfaz Responsive (APROX)
@@ -43,4 +43,4 @@ para instalar todas las dependencias usadas por React en el proyecto. Esto puede
 
 La misma se abre por defecto en http://localhost:3000
 
-Por otro lado, la app se encuentra deployeada [AQUÍ](https://enriquezmartin.github.io/unq-ui-enriquez-martin-trabajo-final/)
+Por otro lado, la app se encuentra deployeada [->AQUÍ<-](https://enriquezmartin.github.io/unq-ui-enriquez-martin-trabajo-final/)
