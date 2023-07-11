@@ -29,6 +29,7 @@ input{
 .errImage{
     height: 50vh;
     max-height: calc(100% - 20px);
+    max-width: calc(100% - 20px);
 }
 
 .ruleList {

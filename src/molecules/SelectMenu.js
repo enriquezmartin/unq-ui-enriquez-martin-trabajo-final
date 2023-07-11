@@ -3,13 +3,6 @@ import SelectItem from '../atoms/SelectItem'
 import './molecStyles/SelectMenu.css'
 
 const SelectMenu = ({setPlay, turn}) => {
-    const names = [
-        "Piedra",
-        "Papel",
-        "Tijera",
-        "Spock",
-        "Lagarto"
-    ];
 
     //Si le pasaba el parámetro no me funcionaba.
     const setRock = () => {setPlay(0, turn);}

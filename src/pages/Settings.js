@@ -51,10 +51,11 @@ const Settings = () => {
         value={config.player2Name} onChange={updateP2Name}/>
       <p>
         <Toggle 
+          defaultChecked={!config.vsCom}
+          checked={!config.vsCom}
           onChange={handleChange}
           labelLeft='VS COM'
           labelRight='VS PERSONA'
-          defaultChecked={!config.vsCom}
           />
       </p>
       <p>Borrar puntajes</p> <Button text={"Borrar"} handleClick={resetScore}/>

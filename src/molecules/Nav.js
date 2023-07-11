@@ -7,16 +7,16 @@ const Nav = () => {
     <nav>
         <NavLink className= {
             ({isActive} ) => (isActive ? "activo" : "inactivo")
-        } to="/">Inicio</NavLink>
+        } to="/unq-ui-enriquez-martin-trabajo-final/home">Inicio</NavLink>
         <NavLink className= {
             ({isActive} ) => (isActive ? "activo" : "inactivo")
-        } to="/jugar">Jugar</NavLink>
+        } to="/unq-ui-enriquez-martin-trabajo-final/jugar">Jugar</NavLink>
         <NavLink className= {
             ({isActive} ) => (isActive ? "activo" : "inactivo")
-        } to="/configurar">Configuración</NavLink>
+        } to="/unq-ui-enriquez-martin-trabajo-final/configurar">Configuración</NavLink>
         <NavLink className= {
             ({isActive} ) => (isActive ? "activo" : "inactivo")
-        } to="/reglas">Reglas</NavLink>
+        } to="/unq-ui-enriquez-martin-trabajo-final/reglas">Reglas</NavLink>
     </nav>
 
   )

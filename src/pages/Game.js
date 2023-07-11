@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import {FaHandLizard, FaHandRock, FaHandScissors, FaHandSpock, FaHandPaper} from 'react-icons/fa' 
 import SelectMenu from '../molecules/SelectMenu';
 import Scoreboard from '../molecules/Scoreboard';
 import HandBalloon from '../atoms/HandBalloon';
@@ -8,6 +9,14 @@ import { UserContext } from '../contexts/UserContext';
 
 
 const Game = () => {
+  
+  const icons = [
+    <FaHandRock/>,
+    <FaHandPaper/>,
+    <FaHandScissors/>,
+    <FaHandSpock/>,
+    <FaHandLizard/>
+];
     const calculateWinner = (play1, play2) =>{
       //Retorna: 0 si empatan, 1 si gana jugador 1 , 2 si gana jugador2/com
       const p1 = play1+1; 
@@ -165,7 +174,7 @@ const Game = () => {
       <div className='gameContainer'>
       <h1>Jugar</h1>
         <div className='wrapper'>  
-          <div ref={refTurn}>Turno del jugador: {playerTurn === 0 ? p1Name : p2Name }
+          <div ref={refTurn}> {}
           </div>
           <div className='selectorContainer'>
               <SelectMenu setPlay={playSetter} turn={playerTurn}/>
