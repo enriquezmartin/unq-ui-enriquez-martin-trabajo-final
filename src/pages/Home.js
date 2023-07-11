@@ -23,12 +23,11 @@ const Home = () => {
         <h2 className='subtitle'>{"Ingrese nombre del jugador: "}</h2>
         <input ref={name1Ref} type='text' placeholder='Ingrese nombre...'/>
         <div>
-            <Link className='myButton' to = "/jugar" onClick={updateP1Name}>
+            <Link className='myButton' to = "/unq-ui-enriquez-martin-trabajo-final/jugar" onClick={updateP1Name}>
             Jugar!
             </Link>
         </div>
     </div>
   )
 }
-
 export default Home

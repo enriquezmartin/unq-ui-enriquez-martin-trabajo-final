@@ -9,15 +9,7 @@ import { UserContext } from '../contexts/UserContext';
 
 
 const Game = () => {
-  
-  const icons = [
-    <FaHandRock/>,
-    <FaHandPaper/>,
-    <FaHandScissors/>,
-    <FaHandSpock/>,
-    <FaHandLizard/>
-];
-    const calculateWinner = (play1, play2) =>{
+      const calculateWinner = (play1, play2) =>{
       //Retorna: 0 si empatan, 1 si gana jugador 1 , 2 si gana jugador2/com
       const p1 = play1+1; 
       const p2 = play2+1;
@@ -137,14 +129,13 @@ const Game = () => {
     }
 
     useEffect(() => {
+      /*Siempre al cargar esta página, resetea la partida*/
       setState(States.P1Select);
       hideResult();
     }, [])
 
     useEffect(() => {
-      /* Maquina de estados. 
-      La idea es manejar la jugada acá, cuando cambie
-      algún parámetro como ser la elección de cada jugador.*/
+      /* Maquina de estados. */
       switch (state) {
         case States.P1Select:
           refInfo.current.style.visibility = "visible";
@@ -174,7 +165,8 @@ const Game = () => {
       <div className='gameContainer'>
       <h1>Jugar</h1>
         <div className='wrapper'>  
-          <div ref={refTurn}> {}
+          <div ref={refTurn}> 
+            Turno del jugador {playerTurn === 0 ? p1Name : p2Name}
           </div>
           <div className='selectorContainer'>
               <SelectMenu setPlay={playSetter} turn={playerTurn}/>

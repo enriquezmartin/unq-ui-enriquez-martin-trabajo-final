@@ -38,5 +38,4 @@ const SelectItem = ({play, set}) => {
     </div>
   )
 }
- //     {icons[play]} <div>{names[play]}</div>
 export default SelectItem

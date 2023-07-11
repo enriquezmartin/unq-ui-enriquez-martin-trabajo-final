@@ -15,7 +15,7 @@ const App = () => {
     <UserProvider>
         <Nav/>
         <Routes>
-          <Route path='/unq-ui-enriquez-martin-trabajo-final/home' element={<Home/>}/>
+          <Route path='/unq-ui-enriquez-martin-trabajo-final' element={<Home/>}/>
           <Route path='/unq-ui-enriquez-martin-trabajo-final/jugar' element={<Game/>}/>
           <Route path='/unq-ui-enriquez-martin-trabajo-final/configurar' element={<Settings/>}/>
           <Route path='/unq-ui-enriquez-martin-trabajo-final/reglas' element={<Rules/>}/>
