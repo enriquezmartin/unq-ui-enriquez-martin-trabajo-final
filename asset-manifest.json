@@ -1,10 +1,14 @@
 {
   "files": {
     "main.css": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.fcf78be7.css",
-    "main.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.3d5d0da4.js",
+    "main.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.57c88970.js",
+    "static/js/845.374fb480.chunk.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/845.374fb480.chunk.js",
     "static/js/787.32b29eb7.chunk.js": "/unq-ui-enriquez-martin-trabajo-final/static/js/787.32b29eb7.chunk.js",
+    "static/media/button.wav": "/unq-ui-enriquez-martin-trabajo-final/static/media/button.2c6c28174c4608d00a0c.wav",
+    "static/media/play-select.wav": "/unq-ui-enriquez-martin-trabajo-final/static/media/play-select.1c1801823d3a8cbecaa3.wav",
     "static/media/bkg1.jpg": "/unq-ui-enriquez-martin-trabajo-final/static/media/bkg1.60d52e4519019887c753.jpg",
     "static/media/rules.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/rules.755151ea1dd10a95dbba.png",
+    "static/media/menu-selection-hover.wav": "/unq-ui-enriquez-martin-trabajo-final/static/media/menu-selection-hover.504e31278c0ed47e7562.wav",
     "static/media/bluewhale.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/bluewhale.27dfa202612c5427a699.png",
     "static/media/lizard.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/lizard.97ea625c5456a8113558.png",
     "static/media/paper.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/paper.4b5c1bc296d9f9f90b41.png",
@@ -12,11 +16,12 @@
     "static/media/scissors.png": "/unq-ui-enriquez-martin-trabajo-final/static/media/scissors.782cf78cf3a1fa46f69a.png",
     "index.html": "/unq-ui-enriquez-martin-trabajo-final/index.html",
     "main.fcf78be7.css.map": "/unq-ui-enriquez-martin-trabajo-final/static/css/main.fcf78be7.css.map",
-    "main.3d5d0da4.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.3d5d0da4.js.map",
+    "main.57c88970.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/main.57c88970.js.map",
+    "845.374fb480.chunk.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/845.374fb480.chunk.js.map",
     "787.32b29eb7.chunk.js.map": "/unq-ui-enriquez-martin-trabajo-final/static/js/787.32b29eb7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fcf78be7.css",
-    "static/js/main.3d5d0da4.js"
+    "static/js/main.57c88970.js"
   ]
 }
