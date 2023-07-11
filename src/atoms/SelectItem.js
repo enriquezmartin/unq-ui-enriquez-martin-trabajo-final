@@ -6,6 +6,8 @@ import im_scissors from '../images/scissors.png'
 import im_spock from '../images/spock.png'
 import im_lizard from '../images/lizard.png'
 import {FaHandLizard, FaHandRock, FaHandScissors, FaHandSpock, FaHandPaper} from 'react-icons/fa' 
+import useSound from 'use-sound'
+import hoverSfx from '../sounds/menu-selection-hover.wav'
 
 const SelectItem = ({play, set}) => {
     const ims = [
@@ -31,9 +33,13 @@ const SelectItem = ({play, set}) => {
       "Spock",
       "Lagarto"
     ];
+    const [playHoverSfx, { stopHoverSfx }] = useSound(hoverSfx);
+
   return (
     <div onClick={set} className='item'>
-      <img className='select' src = {ims[play]} alt={"PlayLogo"}/>
+      <img className='select' src = {ims[play]} alt={"PlayLogo"} 
+        onMouseEnter={()=>playHoverSfx()} 
+        onMouseLeave={stopHoverSfx}/>
       <div className='subtext'>{icons[play]}{" "+names[play]} </div>
     </div>
   )

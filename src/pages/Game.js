@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import {FaHandLizard, FaHandRock, FaHandScissors, FaHandSpock, FaHandPaper} from 'react-icons/fa' 
 import SelectMenu from '../molecules/SelectMenu';
 import Scoreboard from '../molecules/Scoreboard';
 import HandBalloon from '../atoms/HandBalloon';
 import Button from '../atoms/Button';
 import './pageStyles/Game.css';
 import { UserContext } from '../contexts/UserContext';
-
+import useSound from 'use-sound';
+import playSelectSfx from '../sounds/play-select.wav';
 
 const Game = () => {
       const calculateWinner = (play1, play2) =>{
@@ -26,7 +26,7 @@ const Game = () => {
       }
       return 2;
     }
-
+    const [playSelect] = useSound(playSelectSfx);
     const {config, setConfig} = useContext(UserContext);
     const p1Name = config.player1Name;
     const p2Name = config.player2Name;
@@ -82,10 +82,12 @@ const Game = () => {
             setSelectedPlay(play);
             turnChange();
             nextState();
+            playSelect();
             break;
           case 1:
             if(!vsCom) {
               setSelected2pPlay(play);
+              playSelect();
             }
             turnChange();
             nextState();
@@ -135,7 +137,11 @@ const Game = () => {
     }, [])
 
     useEffect(() => {
-      /* Maquina de estados. */
+      /* Maquina de estados. 
+      La jugada se maneja acá y en el playSetter, que se ejecuta
+      cuando el jugador cliquea la opcion.
+      En caso de jugar contra la COM unicamente seteará la jugada acá,
+      sino debe hacerlo al cliquear.*/
       switch (state) {
         case States.P1Select:
           refInfo.current.style.visibility = "visible";
